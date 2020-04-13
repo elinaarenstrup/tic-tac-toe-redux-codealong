@@ -1,17 +1,21 @@
-import React from 'react'
-import { Player } from 'components/Player'
+import React from "react";
+import { useDispatch } from "react-redux";
+import { game } from "reducers/game";
+import { Player } from "components/Player";
 
 export const Square = ({ value, index }) => {
+  const dispatch = useDispatch();
   const handleClick = () => {
-    // TODO send the captureSquare action
-  }
+    dispatch(game.actions.captureSquare({ index }));
+  };
 
   return (
     <button
-      className={value === null ? 'square clickable' : 'square'}
+      className={value === null ? "square clickable" : "square"}
       type="button"
-      onClick={handleClick}>
+      onClick={handleClick}
+    >
       <Player value={value} />
     </button>
-  )
-}
+  );
+};

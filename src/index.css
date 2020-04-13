@@ -5,6 +5,7 @@
 }
 
 body {
+  background-color: pink;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -33,8 +34,8 @@ main {
 
 .square {
   padding-bottom: 100%;
-  background: #ccc;
-  border: 1px solid green;
+  background: white;
+  border: 3px solid orange;
   display: block;
   appearance: none;
   cursor: pointer;
@@ -54,6 +55,20 @@ main {
 }
 
 .stats {
-  padding-top: 5vw;
-  font-size: 2vw;
+  padding-top: 20vw;
+}
+
+.stats p {
+  font-family: Helvetica, sans-serif;
+  font-size: 4vw;
+  font-weight: bolder;
+  color: blue;
+}
+
+.stats button {
+  color: white;
+  background: red;
+  padding: 1vw 2vw;
+  border: none;
+  border-radius: 1vw;
 }

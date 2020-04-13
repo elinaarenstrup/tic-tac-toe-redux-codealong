@@ -1,43 +1,39 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { calculateWinner } from 'utils/calculateWinner'
+import { createSlice } from "@reduxjs/toolkit";
+import { calculateWinner } from "utils/calculateWinner";
 
 const newGame = {
-  squares: [
-    null, null, null,
-    null, null, null,
-    null, null, null
-  ],
+  squares: [null, null, null, null, null, null, null, null, null],
   winner: null,
-  player: 'x'
-}
+  player: "x",
+};
 
 export const game = createSlice({
-  name: 'game',
+  name: "game",
   initialState: newGame,
   reducers: {
     captureSquare: (state, action) => {
-      const { index } = action.payload
+      const { index } = action.payload;
 
       // If the square is 'uncaptured', capture it
       if (state.squares[index] === null) {
-        state.squares[index] = state.player
+        state.squares[index] = state.player;
       }
 
       // Change the player to the next player
-      if (state.player === 'x') {
-        state.player = 'o'
+      if (state.player === "x") {
+        state.player = "o";
       } else {
-        state.player = 'x'
+        state.player = "x";
       }
 
       // If a winner hasn't already been declared, then check
       // who the winner is
       if (!state.winner) {
-        state.winner = calculateWinner(state.squares)
+        state.winner = calculateWinner(state.squares);
       }
     },
     restart: () => {
-      return newGame
-    }
-  }
-})
+      return newGame;
+    },
+  },
+});
