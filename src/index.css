@@ -36,6 +36,7 @@ main {
   padding-bottom: 100%;
   background: white;
   border: 3px solid orange;
+  border-radius: 1vw;
   display: block;
   appearance: none;
   cursor: pointer;
@@ -66,9 +67,13 @@ main {
 }
 
 .stats button {
+  font-family: Helvetica, sans-serif;
+  font-size: 1vw;
+  font-weight: bold;
   color: white;
   background: red;
   padding: 1vw 2vw;
   border: none;
   border-radius: 1vw;
+  cursor: pointer;
 }
